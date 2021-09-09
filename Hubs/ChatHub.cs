@@ -13,7 +13,8 @@ namespace Messeger.Hubs
         static List<User> Users = new List<User>();
         public void Send(string name, string message)
         {
-            Clients.All.addMessage(name, message);
+            var Id = Context.ConnectionId;
+            Clients.All.addMessage(name, message,Id);
         }
 
         public void Connect(string userName)
@@ -25,8 +26,8 @@ namespace Messeger.Hubs
                 Users.Add(new User() { ConnectionId = Id, Name = userName });
 
                 Clients.Caller.onConnected(Id, userName, Users);
-
                 Clients.AllExcept(Id).onNewUserConnected(Id, userName);
+
             }
         }
 
