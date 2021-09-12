@@ -131,3 +131,5 @@ K:\Users\Коля\source\repos\Messeger\Messeger\obj\Debug\Messeger.csproj.CoreC
 K:\Users\Коля\source\repos\Messeger\Messeger\obj\Debug\Messeger.csproj.CopyComplete
 K:\Users\Коля\source\repos\Messeger\Messeger\obj\Debug\Messeger.dll
 K:\Users\Коля\source\repos\Messeger\Messeger\obj\Debug\Messeger.pdb
+K:\Users\Коля\source\repos\Messeger\Messeger\bin\Dapper.dll
+K:\Users\Коля\source\repos\Messeger\Messeger\bin\Dapper.xml

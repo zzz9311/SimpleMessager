@@ -1,4 +1,5 @@
 ﻿using Messeger.Models.Chat;
+using Messeger.Models.Repositories;
 using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,18 @@ namespace Messeger.Hubs
 {
     public class ChatHub:Hub
     {
+        private static readonly MessageRepository MessageRepos = new MessageRepository();
         static List<User> Users = new List<User>();
         public void Send(string name, string message)
         {
             var Id = Context.ConnectionId;
+            try
+            {
+                MessageRepos.AddMessage(new Models.db.Message() { Date = DateTime.Now, Text = message });
+            }
+            catch (Exception ex)
+            {
+            }
             Clients.All.addMessage(name, message,Id);
         }
 
